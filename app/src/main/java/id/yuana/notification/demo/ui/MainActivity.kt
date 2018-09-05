@@ -52,7 +52,9 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun actionChangeRingtone() {
-        val currentTone = RingtoneManager.getActualDefaultRingtoneUri(this@MainActivity, RingtoneManager.TYPE_ALARM)
+        val currentTone = App.instance.cache.getString(MainActivity.PREF_RINGTONE, null)
+        if (currentTone == null) RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION) else Uri.parse(currentTone)
+
         val intent = Intent(RingtoneManager.ACTION_RINGTONE_PICKER)
         intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_RINGTONE)
         intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, "Select Ringtone")

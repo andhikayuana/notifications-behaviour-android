@@ -50,7 +50,7 @@ object NotificationUtil {
             setGroupSummary(true)
             setGroup("NOTIFICATION_${notificationMessage.roomId}")
             setAutoCancel(true)
-            setSound(null)
+            setSound(ringtoneUri)
             setLights(Color.GREEN, 500, 500)
             setVibrate(longArrayOf(100, 0, 100, 0))
             priority = NotificationCompat.PRIORITY_HIGH
@@ -64,7 +64,7 @@ object NotificationUtil {
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                     .build()
-            channel.setSound(null, att)
+            channel.setSound(ringtoneUri, att)
             channel.enableLights(true)
             channel.lightColor = Color.GREEN
             channel.enableVibration(true)
