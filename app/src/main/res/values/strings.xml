@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Notification Demo</string>
+    <string name="txt_show_notification">Show Notification</string>
+    <string name="txt_change_ringtone">Change Ringtone</string>
+    <string name="txt_notification_channel">Notification Channel</string>
+</resources>
